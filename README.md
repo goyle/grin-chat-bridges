@@ -8,6 +8,23 @@ You may need to make the binary executable if you are using Linux.
 Create a configuration file for each gateway: https://github.com/42wim/matterbridge/wiki/How-to-create-your-config
 
 
+## Running Matterbridge
+```
+./matterbridge -conf example-config.toml
+```
+### Usage of Matterbridge
+```
+  -conf string
+        config file (default "matterbridge.toml")
+  -debug
+        enable debug
+  -gops
+        enable gops agent
+  -version
+        show version
+```
+
+
 ## Creating a Discord bot
 Setup a Discord bot by following the instructions here: https://github.com/42wim/matterbridge/wiki/Discord-bot-setup
 \

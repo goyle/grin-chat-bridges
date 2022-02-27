@@ -1,0 +1,206 @@
+[discord]
+    [discord.grin-community]
+    # Invite a Discord bot to the server and add its secret token here.
+    # For more instructions: https://github.com/42wim/matterbridge/wiki/Discord-bot-setup
+    Token="[INSERT DISCORD BOT TOKEN]"
+    
+    # This defines how the names of remote users of the bridge are displayed.
+    RemoteNickFormat="{NICK}"
+    
+    # ShowEmbeds shows the title, description and URL of embedded messages (sent by other bots).
+    ShowEmbeds=true
+    
+    # UseUserName shows the username instead of the server nickname.
+    UseUserName=false
+    
+    # UseDiscriminator appends the `#xxxx` discriminator when used with UseUserName
+    UseDiscriminator=false
+    
+    # Enabling this will automatically load or create webhooks for each channel.
+    # Requires the "Manage Webhooks" bot permission.
+    AutoWebhooks=false
+    
+    # EditDisable disables sending of edits to other bridges.
+    # Set this to false to allow message edits.
+    EditDisable=false
+    
+    # EditSuffix specifies the message to be appended to every edited message.
+    EditSuffix="  (edited)"
+    
+    # Replace any message that attempts to ping everyone on Discord using the bridge.
+    ReplaceMessages=[ ["@all","`@all`"], ["@everyone","`@everyone`"] ]
+    
+    # ShowJoinPart emits messages that show joins/parts from other bridges
+    # Supported from the following bridges: irc, mattermost, slack, discord
+    ShowJoinPart=false
+    
+    # StripNick strips non-alphanumeric characters from nicknames.
+    # Recommended reading: https://github.com/42wim/matterbridge/issues/285
+    StripNick=false
+
+[telegram]
+    [telegram.grinprivacy]
+    Token="[INSERT TELEGRAM BOT TOKEN]"
+    
+    # This defines how the names of remote users of the bridge are displayed.
+    RemoteNickFormat="🗨️<b>{NICK}</b>  [<code>{PROTOCOL}</code>]:\n"
+    
+    # Supported formats are:
+    # "HTML" https://core.telegram.org/bots/api#html-style
+    # "Markdown" https://core.telegram.org/bots/api#markdown-style - deprecated, doesn't display links with underscores correctly
+    # "MarkdownV2" https://core.telegram.org/bots/api#markdownv2-style
+    # "HTMLNick" - only allows HTML for the nick, the message itself will be html-escaped
+    MessageFormat="HTMLNick"
+    
+    # Disables link previews for links in messages.
+    DisableWebPagePreview=false
+    
+    # If enabled, use the "First Name" as username. If this is empty, use the Username.
+    # If disabled, use the "Username" as username. If this is empty, use the First Name.
+    # If all names are empty, username will be "unknown".
+    UseFirstName=false
+    
+    # WARNING! If enabled this will relay GIF/stickers/documents and other attachments as URLs
+    # Those URLs will contain your bot-token. This may not be what you want.
+    # For now there is no secure way to relay GIF/stickers/documents without seeing your token.
+    UseInsecureURL=false
+    
+    # Disable quoted/reply messages.
+    QuoteDisable=false
+    
+    # Set the max quoted length. If 0, the whole message will be quoted.
+    QuoteLengthLimit=0    
+    
+    # Format quoted/reply messages.
+    QuoteFormat="> {QUOTEMESSAGE}\n`@{QUOTENICK}` {MESSAGE}"  
+    
+    #Convert WebP images to PNG before upload.
+    #https://github.com/42wim/matterbridge/issues/398
+    MediaConvertWebPToPNG=true
+    
+    # EditDisable disables sending of edits to other bridges.
+    # Set this to false to allow message edits.
+    EditDisable=false
+    
+    # EditSuffix specifies the message to be appended to every edited message.
+    EditSuffix="  `(edited)`"
+    
+    # Replace any message that attempts to ping everyone on Discord using the bridge.
+    ReplaceMessages=[ ["@all","`@all`"], ["@everyone","`@everyone`"] ]
+    
+    # ShowJoinPart emits messages that show joins/parts from other bridges
+    # Supported from the following bridges: irc, mattermost, slack, discord
+    ShowJoinPart=false
+    
+    # StripNick strips non-alphanumeric characters from nicknames.
+    # Recommended reading: https://github.com/42wim/matterbridge/issues/285
+    StripNick=false
+
+    [telegram.grinpp]
+    # Setup your Telegram bot by following the instructions here: https://core.telegram.org/bots#6-botfather
+    Token="[INSERT TELEGRAM BOT TOKEN]"
+    
+    # This defines how the names of remote users of the bridge are displayed.
+    RemoteNickFormat=" ^=^w   ^o<b>{NICK}</b>  [<code>{PROTOCOL}</code>]:\n"
+    
+    # Supported formats are:
+    # "HTML" https://core.telegram.org/bots/api#html-style
+    # "Markdown" https://core.telegram.org/bots/api#markdown-style - deprecated, doesn't display links with underscores correctly
+    # "MarkdownV2" https://core.telegram.org/bots/api#markdownv2-style
+    # "HTMLNick" - only allows HTML for the nick, the message itself will be html-escaped
+    MessageFormat="HTMLNick"
+    
+    # Disables link previews for links in messages.
+    DisableWebPagePreview=false
+    
+    # If enabled, use the "First Name" as username. If this is empty, use the Username.
+    # If disabled, use the "Username" as username. If this is empty, use the First Name.
+    # If all names are empty, username will be "unknown".
+    UseFirstName=false
+    
+    # WARNING! If enabled this will relay GIF/stickers/documents and other attachments as URLs
+    # Those URLs will contain your bot-token. This may not be what you want.
+    # For now there is no secure way to relay GIF/stickers/documents without seeing your token.
+    UseInsecureURL=false
+    
+    # Disable quoted/reply messages.
+    QuoteDisable=false
+    
+    # Set the max quoted length. If 0, the whole message will be quoted.
+    QuoteLengthLimit=0
+    
+    # Format quoted/reply messages.
+    QuoteFormat="> {QUOTEMESSAGE}\n`@{QUOTENICK}` {MESSAGE}"
+    
+    #Convert WebP images to PNG before upload.
+    #https://github.com/42wim/matterbridge/issues/398
+    MediaConvertWebPToPNG=true
+    
+    # EditDisable disables sending of edits to other bridges.
+    # Set this to false to allow message edits.
+    EditDisable=false
+
+    # EditSuffix specifies the message to be appended to every edited message.
+    EditSuffix="  `(edited)`"
+    
+    # ShowJoinPart emits messages that show joins/parts from other bridges
+    # Supported from the following bridges: irc, mattermost, slack, discord
+    ShowJoinPart=false
+    
+    # StripNick strips non-alphanumeric characters from nicknames.
+    # Recommended reading: https://github.com/42wim/matterbridge/issues/285    
+    StripNick=false
+
+
+###################################################################
+#Gateway configuration
+###################################################################
+
+#You can specify multiple gateways using [[gateway]]
+#Each gateway has a [[gateway.in]] and a [[gateway.out]]
+#[[gateway.in]] specifies the account and channels we will receive messages from.
+#[[gateway.out]] specifies the account and channels we will send the messages
+#from [[gateway.in]] to.
+#
+#Most of the time [[gateway.in]] and [[gateway.out]] are the same if you
+#want bidirectional bridging. You can then use [[gateway.inout]]
+#
+
+[[gateway]]
+# Read-only bridge from Grin Privacy Telegram group to Grin Community Discord.
+name="gateway1"
+enable=true
+    [[gateway.out]]
+    account="discord.grin-community"
+    channel="telegram-ro"
+
+	[gateway.out.options]
+	# Example webhook url: "https://discord.com/api/webhooks/12345/example"
+	WebhookURL="[INSERT DISCORD WEBHOOK URL]"
+
+    [[gateway.in]]
+    account="telegram.grinprivacy"
+
+    # The telegram chat ID is a large negative number. Example: "-123456789".
+    # See: https://www.linkedin.com/pulse/telegram-bots-beginners-marco-frau
+    channel="[INSERT TELEGRAM CHAT ID]"
+
+[[gateway]]
+# Two-way bridge between GrinPlusPlus Telegram group and Grin Community Discord.
+name="gateway2"
+enable=true
+    [[gateway.inout]]
+    account="discord.grin-community"
+    channel="grinplusplus-rw"
+
+        [gateway.inout.options]
+        # Example webhook url: "https://discord.com/api/webhooks/12345/example"
+        WebhookURL="[INSERT DISCORD WEBHOOK URL]"
+
+    [[gateway.inout]]
+    account="telegram.grinprivacy"
+
+    # The telegram chat ID is a large negative number. Example: "-123456789".
+    # See: https://www.linkedin.com/pulse/telegram-bots-beginners-marco-frau
+    channel="[INSERT TELEGRAM CHAT ID]"
+

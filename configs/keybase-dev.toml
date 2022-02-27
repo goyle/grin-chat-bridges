@@ -1,0 +1,67 @@
+[discord]
+    [discord.grin-community]
+    # Invite a Discord bot to the server and add its secret token here.
+    # For more instructions: https://github.com/42wim/matterbridge/wiki/Discord-bot-setup
+    Token="[INSERT DISCORD BOT TOKEN HERE]"
+    
+    # Add the public ID of the guild that the bot is connecting to.
+    # The ID of the Grin Community Discord is "508770582679126017".
+    Server="508770582679126017"
+    
+    # This defines how the names of remote users of the bridge are displayed.
+    RemoteNickFormat="{NICK} (#{CHANNEL} 🧪)"
+    
+    # ShowEmbeds shows the title, description and URL of embedded messages (sent by other bots).
+    ShowEmbeds=true
+    
+    # Enabling this will automatically load or create webhooks for each channel.
+    # Requires the "Manage Webhooks" bot permission.
+    AutoWebhooks=false
+    
+    # Message edits are not supported yet for the Keybase bridge.
+    #EditDisable=false
+    
+    # Replace any message that attempts to ping everyone on Discord using the bridge.
+    ReplaceMessages=[ ["@all","`@all`"], ["@everyone","`@everyone`"] ]
+
+[keybase]
+    [keybase.grincoin]
+    # Your bot account MUST already have access to the provided team or subteam!
+    Team="grincoin"
+    
+    # This defines how the names of remote users of the bridge are displayed.
+    RemoteNickFormat="[{PROTOCOL}/{BRIDGE}] <{NICK}> "
+    
+    # Replace any message that attempts to ping everyone on Discord using the bridge.
+    ReplaceMessages=[ ["@all","`@all`"], ["@everyone","`@everyone`"] ]
+
+###################################################################
+#Gateway configuration
+###################################################################
+
+#You can specify multiple gateways using [[gateway]]
+#Each gateway has a [[gateway.in]] and a [[gateway.out]]
+#[[gateway.in]] specifies the account and channels we will receive messages from.
+#[[gateway.out]] specifies the account and channels we will send the messages
+#from [[gateway.in]] to.
+#
+#Most of the time [[gateway.in]] and [[gateway.out]] are the same if you
+#want bidirectional bridging. You can then use [[gateway.inout]]
+#
+
+[[gateway]]
+# Read-only bridge from Grincoin Keybase's "dev" channel to Grin Community Discord.
+name="gateway1"
+enable=true
+    [[gateway.out]]
+    account="discord.grin-community"
+    channel="keybase-ro"
+
+        [gateway.out.options]
+        # Example webhook url: "https://discord.com/api/webhooks/12345/example"
+        WebhookURL="[INSERT DISCORD WEBHOOK URL]"
+
+    [[gateway.in]]
+    account="keybase.grincoin"
+    channel="dev"
+
